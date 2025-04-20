@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc6nqa6lr35t6"]
+
+[ext_resource type="Texture2D" uid="uid://8uw14aacl7wi" path="res://icon.svg" id="1_e7vf7"]
+[ext_resource type="Script" uid="uid://x0vn78kvbhmn" path="res://scenes/places/intro/player.gd" id="1_goa58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7vf7"]
+size = Vector2(128, 128)
+
+[node name="Intro" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 656.0
+color = Color(0.313726, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_goa58")
+
+[node name="player sprite placeholder" type="Sprite2D" parent="Player"]
+position = Vector2(576, 320)
+texture = ExtResource("1_e7vf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_e7vf7")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(576, 328)
