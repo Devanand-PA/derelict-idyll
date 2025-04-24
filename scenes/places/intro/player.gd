@@ -1,20 +1,20 @@
 extends CharacterBody2D
+
 # Exporting allows you to change this value in the Inspector
 @export var speed = 300.0 # Pixels per second
 
-func _physics_process(delta):
-	# Get input direction vector
-	# Input.get_vector(negative_x, positive_x, negative_y, positive_y)
-	# This automatically handles normalization (diagonal speed isn't faster)
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+# In Player.gd
+# ... (rest of the script) ...
 
-	# Set velocity based on direction and speed
+func _physics_process(delta):
+	# Use the NEW action names
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
 	if direction:
 		velocity = direction * speed
 	else:
-		# If no input, stop moving
-		velocity = Vector2.ZERO # Or move_toward(velocity, Vector2.ZERO, speed) for gradual stop
+		velocity = Vector2.ZERO
 
-	# Move the character and handle collisions
-	# move_and_slide() is the core function for CharacterBody2D movement
 	move_and_slide()
+
+# ... (rest of the script) ...
