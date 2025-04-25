@@ -1,7 +1,13 @@
 extends Control
+func _input(event):
+	if event.is_action_pressed("escape_button"):
+		print("Escape pressed")
+		print("Current scene is :",SettingsManager.curr_scene)
+		print("Last Scene was :",SettingsManager.last_scene)
+		SettingsManager.change_scene(SettingsManager.last_scene)
 
-func _on_keybind_settings_pressed():
-	# Replace "res://Intro.tscn" with the actual path to your intro scene file
-	var error = get_tree().change_scene_to_file("res://settings/keybind_settings.tscn")
-	if error != OK:
-		printerr("Error changing scene to keybind_settings.tscn: ", error)
+func on_save_button_pressed():
+	SettingsManager.save_game()
+
+func on_load_button_pressed():
+	SettingsManager.load_game()

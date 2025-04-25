@@ -54,5 +54,5 @@ text = "Quit
 "
 
 [connection signal="pressed" from="VBoxContainer/New Game Button" to="." method="_on_start_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="_on_settings"]
+[connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_pressed"]
