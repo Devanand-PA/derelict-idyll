@@ -47,6 +47,15 @@ text = "Save"
 layout_mode = 2
 text = "Load Game"
 
+[node name="titlescreen_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "To Title Screen"
+
+[node name="quitbutton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
 [connection signal="pressed" from="VBoxContainer/keybind settings" to="." method="_on_keybind_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/savebutton" to="." method="on_save_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/load_button" to="." method="on_load_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitbutton" to="." method="_on_quit_pressed"]

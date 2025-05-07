@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://coy6g8m8m8i2r"]
+
+[ext_resource type="Script" uid="uid://x0vn78kvbhmn" path="res://scenes/places/intro/player.gd" id="1_yw30f"]
+[ext_resource type="Texture2D" uid="uid://kueyxsfd7tjc" path="res://assets/player_1/playersprites/player_idle_back.png" id="2_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://dmeuknvj3ggqa" path="res://assets/player_1/playersprites/player_idle.png" id="3_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://brjv0u1shtarr" path="res://assets/player_1/playersprites/player_idle_hand_in_pocket.png" id="4_boad6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7vf7"]
+size = Vector2(32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goa58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qjkh3")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g6k8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_boad6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yw30f")
+
+[node name="player leg collision" type="CollisionShape2D" parent="."]
+position = Vector2(576, 352)
+shape = SubResource("RectangleShape2D_e7vf7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(0.25, 0.242188)
+sprite_frames = SubResource("SpriteFrames_goa58")
+frame_progress = 0.980183
