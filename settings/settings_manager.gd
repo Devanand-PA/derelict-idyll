@@ -27,12 +27,12 @@ func save_game():
 		"last_scene" : SettingsManager.last_scene
 	}
 	
-	var save_file = FileAccess.open("res://savegames/save1.json",FileAccess.WRITE)
+	var save_file = FileAccess.open("user://savegame.json",FileAccess.WRITE)
 	save_file.store_string(JSON.stringify(save_dict, "\t"))
 	save_file = null
 	
 func load_game():
-	var load_file = FileAccess.open("res://savegames/save1.json",FileAccess.WRITE)
+	var load_file = FileAccess.open("user://savegamea.json",FileAccess.WRITE)
 	var load_dict = JSON.parse_string(load_file.get_as_text())
 	if load_dict :
 		SettingsManager.curr_scene = load_dict.curr_scene
