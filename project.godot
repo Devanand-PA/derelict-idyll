@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="derelict idyl"
+config/name="derelict idyll"
 run/main_scene="uid://crnxs6p5kk2p0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
