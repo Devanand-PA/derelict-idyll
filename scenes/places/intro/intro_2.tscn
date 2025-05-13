@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmirpcioqacoi"]
+
+[ext_resource type="PackedScene" uid="uid://coy6g8m8m8i2r" path="res://player/player.tscn" id="1_v3xp4"]
+[ext_resource type="PackedScene" uid="uid://bmjqwho1e05ps" path="res://location scenes/timeless/Garden of eden/garden_of_eden.tscn" id="2_h4utp"]
+
+[node name="intro2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_v3xp4")]
+
+[node name="garden of eden" parent="." instance=ExtResource("2_h4utp")]
