@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coy6g8m8m8i2r" path="res://player/player.tscn" id="3_asjvc"]
 
 [node name="Intro" type="Node2D"]
+scale = Vector2(0.979383, 0.985221)
 script = ExtResource("1_asjvc")
 
 [node name="Potter strait" parent="." instance=ExtResource("2_asjvc")]
