@@ -4,12 +4,19 @@ var acceleration = 20
 var friction = 80
 var input_dir = Vector2.ZERO
 
-
+@onready var player_scene = self
 var max_speed = 600
 var playerDirection =  Vector2(0,1)
 @onready var playerSprite = $playerSprite1
-@onready var settings_scene = load("res://settings/settings.tscn")
 var playerVelocity = Vector2.DOWN
+
+
+
+func _ready() :
+	if Globals.player_position_x :
+		player_scene.position[0] = Globals.player_position_x
+		player_scene.position[1] = Globals.player_position_y
+
 
 func move_up():
 	input_dir[1] = 1
@@ -24,7 +31,10 @@ func move_left():
 func move_right():
 	input_dir[0] = 1
 
+
+
 func _physics_process(delta):
+	
 
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	input_dir = input_dir.normalized()
@@ -63,4 +73,5 @@ func _physics_process(delta):
 			playerSprite.play("idle_right")
 		
 	move_and_collide(velocity * delta)
-	print(idle_counter,playerDirection)	
+	Globals.player_position_x = player_scene.position[0]
+	Globals.player_position_y = player_scene.position[1]

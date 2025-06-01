@@ -4,6 +4,8 @@ func _ready() -> void:
 	SettingsManager.initScene()
 
 func _on_start_new_game_pressed() -> void:
+	Globals.player_position_x = 0
+	Globals.player_position_y = 0
 	SettingsManager.change_scene("res://scenes/places/intro/intro.tscn")
 
 func on_settings_button_pressed():

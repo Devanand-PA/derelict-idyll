@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bchk5gloc804s"]
+[gd_scene load_steps=3 format=3 uid="uid://bchk5gloc804s"]
 
 [ext_resource type="Script" uid="uid://cn3j3cqeiwffi" path="res://settings/settings.gd" id="1_iirne"]
+[ext_resource type="PackedScene" uid="uid://c5f6uye2fxt5n" path="res://settings/keybind_settings.tscn" id="2_i854f"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -55,7 +56,10 @@ text = "To Title Screen"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/keybind settings" to="." method="_on_keybind_settings_pressed"]
+[node name="KeybindSettings" parent="." instance=ExtResource("2_i854f")]
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/keybind settings" to="." method="on_keybind_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/savebutton" to="." method="on_save_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/load_button" to="." method="on_load_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/quitbutton" to="." method="_on_quit_pressed"]
