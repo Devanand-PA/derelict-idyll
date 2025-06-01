@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://coy6g8m8m8i2r"]
+[gd_scene load_steps=51 format=3 uid="uid://coy6g8m8m8i2r"]
 
 [ext_resource type="Script" uid="uid://x0vn78kvbhmn" path="res://scenes/places/intro/player.gd" id="1_yw30f"]
 [ext_resource type="Texture2D" uid="uid://248wyyxwsgfa" path="res://assets/player_1/playersprites/player_all_poses.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://nhm235udjo0y" path="res://assets/generic/circle.png" id="3_g1dw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7vf7"]
 size = Vector2(32, 48)
@@ -369,24 +370,43 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = 488.0
-offset_bottom = 528.0
+offset_top = -40.0
+offset_right = 40.0
 grow_vertical = 0
 scale = Vector2(2.01687, 1.85367)
 
+[node name="Circle" type="Sprite2D" parent="HUD/touch controls"]
+position = Vector2(108.088, 52.8681)
+scale = Vector2(0.139449, 0.151726)
+texture = ExtResource("3_g1dw6")
+
 [node name="touch down button" type="TouchScreenButton" parent="HUD/touch controls"]
-position = Vector2(48, 24)
+position = Vector2(47.5985, 25.8946)
 shape = SubResource("RectangleShape2D_rkbax")
+
+[node name="Circle2" type="Sprite2D" parent="HUD/touch controls"]
+position = Vector2(108.088, 1.07894)
+scale = Vector2(0.139449, 0.151726)
+texture = ExtResource("3_g1dw6")
 
 [node name="touch up button" type="TouchScreenButton" parent="HUD/touch controls"]
 position = Vector2(48, -24)
 scale = Vector2(1.01596, 1)
 shape = SubResource("RectangleShape2D_rkbax")
 
+[node name="Circle3" type="Sprite2D" parent="HUD/touch controls"]
+position = Vector2(131.888, 26.9735)
+scale = Vector2(0.139449, 0.151726)
+texture = ExtResource("3_g1dw6")
+
 [node name="touch right button" type="TouchScreenButton" parent="HUD/touch controls"]
 position = Vector2(72, 0)
 shape = SubResource("RectangleShape2D_rkbax")
+
+[node name="Circle4" type="Sprite2D" parent="HUD/touch controls"]
+position = Vector2(84.289, 26.9735)
+scale = Vector2(0.139449, 0.151726)
+texture = ExtResource("3_g1dw6")
 
 [node name="touch left button" type="TouchScreenButton" parent="HUD/touch controls"]
 position = Vector2(24, 0)
