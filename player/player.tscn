@@ -1,8 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://coy6g8m8m8i2r"]
+[gd_scene load_steps=49 format=3 uid="uid://coy6g8m8m8i2r"]
 
 [ext_resource type="Script" uid="uid://x0vn78kvbhmn" path="res://scenes/places/intro/player.gd" id="1_yw30f"]
 [ext_resource type="Texture2D" uid="uid://248wyyxwsgfa" path="res://assets/player_1/playersprites/player_all_poses.png" id="2_rkbax"]
-[ext_resource type="Texture2D" uid="uid://nhm235udjo0y" path="res://assets/generic/circle.png" id="3_g1dw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7vf7"]
 size = Vector2(32, 48)
@@ -338,76 +337,78 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_yw30f")
 
 [node name="player leg collision" type="CollisionShape2D" parent="."]
-position = Vector2(576, 352)
+position = Vector2(642, 360.438)
 shape = SubResource("RectangleShape2D_e7vf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 328)
+position = Vector2(640, 360)
 
 [node name="playerSprite1" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 320)
+position = Vector2(642, 328.438)
 scale = Vector2(0.25, 0.242188)
 sprite_frames = SubResource("SpriteFrames_goa58")
 animation = &"idle_down"
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
-[node name="touch controls" type="VBoxContainer" parent="HUD"]
+[node name="healthbar" type="ProgressBar" parent="HUD"]
+layout_mode = 2
+offset_right = 256.0
+offset_bottom = 27.0
+value = 100.0
+
+[node name="healthlabel" type="Label" parent="HUD/healthbar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Health"
+
+[node name="manabar" type="ProgressBar" parent="HUD"]
+layout_mode = 2
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 91.0
+value = 100.0
+
+[node name="manalabel" type="Label" parent="HUD/manabar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Mana"
+
+[node name="staminabar" type="ProgressBar" parent="HUD"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 59.0
+value = 100.0
+
+[node name="staminalabel" type="Label" parent="HUD/staminabar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Stamina
+"
+
+[node name="inventory_button" type="Button" parent="HUD"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
-grow_vertical = 0
-scale = Vector2(2.01687, 1.85367)
-
-[node name="Circle" type="Sprite2D" parent="HUD/touch controls"]
-position = Vector2(108.088, 52.8681)
-scale = Vector2(0.139449, 0.151726)
-texture = ExtResource("3_g1dw6")
-
-[node name="touch down button" type="TouchScreenButton" parent="HUD/touch controls"]
-position = Vector2(47.5985, 25.8946)
-shape = SubResource("RectangleShape2D_rkbax")
-
-[node name="Circle2" type="Sprite2D" parent="HUD/touch controls"]
-position = Vector2(108.088, 1.07894)
-scale = Vector2(0.139449, 0.151726)
-texture = ExtResource("3_g1dw6")
-
-[node name="touch up button" type="TouchScreenButton" parent="HUD/touch controls"]
-position = Vector2(48, -24)
-scale = Vector2(1.01596, 1)
-shape = SubResource("RectangleShape2D_rkbax")
-
-[node name="Circle3" type="Sprite2D" parent="HUD/touch controls"]
-position = Vector2(131.888, 26.9735)
-scale = Vector2(0.139449, 0.151726)
-texture = ExtResource("3_g1dw6")
-
-[node name="touch right button" type="TouchScreenButton" parent="HUD/touch controls"]
-position = Vector2(72, 0)
-shape = SubResource("RectangleShape2D_rkbax")
-
-[node name="Circle4" type="Sprite2D" parent="HUD/touch controls"]
-position = Vector2(84.289, 26.9735)
-scale = Vector2(0.139449, 0.151726)
-texture = ExtResource("3_g1dw6")
-
-[node name="touch left button" type="TouchScreenButton" parent="HUD/touch controls"]
-position = Vector2(24, 0)
-shape = SubResource("RectangleShape2D_rkbax")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1128.0
+offset_right = 1280.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Inventory (I)"

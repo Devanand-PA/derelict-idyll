@@ -1,0 +1,32 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dqw6n2mmv7uel"]
+
+[ext_resource type="Texture2D" uid="uid://qf8mju17htcl" path="res://scenes/places/Caveforge City/tilemaps/caveforge_city_1.png" id="1_4htsh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0c3ik"]
+texture = ExtResource("1_4htsh")
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_0c3ik")

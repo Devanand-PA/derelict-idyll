@@ -14,11 +14,6 @@ func change_scene(new_scene: String):
 	curr_scene = new_scene
 	get_tree().change_scene_to_file(new_scene)
 
-func go_to_setting(new_setting: String):
-	## TODO : set up tree structure for settings
-	last_setting = curr_scene
-	curr_setting = new_setting
-	get_tree().change_scene_to_file(new_setting)
 
 func save_game():
 	# Bad idea since this will probably return settings menu or something

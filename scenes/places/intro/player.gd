@@ -3,14 +3,12 @@ var idle_counter = 0
 var acceleration = 20
 var friction = 80
 var input_dir = Vector2.ZERO
-func _input(event):
-	if event.is_action_pressed("escape_button"):
-		print("Escape pressed")
-		SettingsManager.change_scene("res://settings/settings.tscn")
+
 
 var max_speed = 600
 var playerDirection =  Vector2(0,1)
 @onready var playerSprite = $playerSprite1
+@onready var settings_scene = load("res://settings/settings.tscn")
 var playerVelocity = Vector2.DOWN
 
 func move_up():
